@@ -65,8 +65,6 @@ const Converter = () => {
                 isLoading ? <Skeleton variant="rounded" width={`100%`} height={24}/>
                     : <Stack textAlign={'right'}>*Данные действительны на {date}</Stack>
             }
-
-
         </Paper>
     );
 };

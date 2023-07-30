@@ -15,7 +15,7 @@ interface IType {
 }
 
 const CustomSelect: FC<IType> = ({data,handlerSelect}) => {
-    console.log(data)
+
     return (
         <FormControl>
             <InputLabel>Валюта</InputLabel>
@@ -26,7 +26,6 @@ const CustomSelect: FC<IType> = ({data,handlerSelect}) => {
                 {
                     data && Object.keys(data).map((item) =>
                         <MenuItem
-
                             key={data[item].ID}
                             value={item}>
                             {`${data[item].Name} (${item})`}

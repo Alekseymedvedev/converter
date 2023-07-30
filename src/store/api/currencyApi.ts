@@ -8,7 +8,7 @@ export const currencyApi = createApi({
         baseUrl: 'https://www.cbr-xml-daily.ru/daily_json.js',
     }),
     endpoints: (build) => ({
-        getCurrency: build.query<IData,''>({
+        getCurrency: build.query<IData,string | number>({
             query: () => ({
                 url: ``,
             }),
