@@ -40,6 +40,15 @@ const Converter = () => {
     const handlerSelect = useSelect()
     const sum = useConversion(handlerInput.value, data?.Valute ? +data.Valute[handlerSelect?.value]?.Value : 0)
 
+    if (error && !isLoading) {
+        return (
+            <Paper sx={styleWrapper}>
+                <Typography variant="h2" sx={{m: 'auto', color: '#f44336'}}>Данные не загружены</Typography>
+            </Paper>
+        )
+    }
+
+
     return (
         <Paper sx={styleWrapper}>
             <Typography variant="h2">Конвертер валют</Typography>
@@ -52,8 +61,8 @@ const Converter = () => {
 
             {
                 isLoading ? <Skeleton variant="rounded" width={`100%`} height={56}/> :
-                    error ? <Stack sx={{height: 56, color: '#f44336'}}>Данные не загружены</Stack> :
-                        <CustomSelect handlerSelect={handlerSelect} data={data?.Valute}/>
+
+                    <CustomSelect handlerSelect={handlerSelect} data={data?.Valute}/>
             }
 
             <Stack direction={'row'} justifyContent={'end'} spacing={1}>
